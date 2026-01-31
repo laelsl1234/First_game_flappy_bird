@@ -1,0 +1,1 @@
+This is my first project, i am using raylib to create the game and i am coding in C, there are multiple versions and i will slowly post them here, Source is the first version, then Sourcre_2 and forwards are the updates.
