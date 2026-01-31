@@ -2,14 +2,9 @@
 #include <stdlib.h>
 #include <raylib.h>
 
-
-
-
-
-
-
 int main(void)
 {
+    // Types of Rectangles
     Rectangle rectangleD = {
         (float)600,
         (float)500,
@@ -47,13 +42,15 @@ int main(void)
         800.0f,
         20.0f
     };
-    
+
+    // Screen-related variables
     const int screenWidth = 800;
     const int screenHeight = 800;
     Vector2 circlePos = { (float) screenWidth / 2, (float) screenHeight / 2 };
 
     InitWindow(screenWidth, screenHeight, "Flappy_test");
 
+    // General-purpose variables
     const int FPS = 120;
     double momentumDown = 0.1;
     double momentumUp = 30;
@@ -101,18 +98,10 @@ int main(void)
             momentumUp = 30;
         }
 
-
-
-
-
         if (IsKeyDown(KEY_H)) {
             circlePos.x = GetMouseX();
             circlePos.y = GetMouseY();
         }
-
-        
-
-
 
         ClearBackground(RAYWHITE);
 
@@ -124,10 +113,10 @@ int main(void)
         DrawRectangleRec(rectangleL, GREEN);
         DrawRectangleRec(rectangleH, YELLOW);
 
-        //DrawRectangleRec(rectangleS, WHITE);
-        //DrawRectangleRec(rectangleSA, BLACK);
-
-        
+        /* **DEBUG MODE**
+        DrawRectangleRec(rectangleS, WHITE);
+        DrawRectangleRec(rectangleSA, BLACK);
+        */
 
         rectangleD.x -= 1;
         rectangleU.x -= 1;
@@ -150,7 +139,7 @@ int main(void)
             rectangleSA.x = 800;
         }
         
-        DrawText(TextFormat("Score: %i",score), (0), (0), 30, RED);
+        DrawText(TextFormat("Score: %i" ,score), (0), (0), 30, RED);
 
     }
         if (CheckCollisionCircleRec(circlePos, 30.0,rectangleD))
@@ -194,15 +183,9 @@ int main(void)
 
             gamerunning = false;
         }
-        
-
-
-
 
         EndDrawing();
-
     }
-
     
     CloseWindow();
 
